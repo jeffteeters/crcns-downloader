@@ -67,7 +67,8 @@ def validate_files(dsid, output_dir, patterns):
     file_count = valid_count + error_count
     print(f"Processed {file_count} files.")
     print(f"Number validated={valid_count}.  Number hash not matching={error_count}.")
-    sys.exit("All done.")
+    print("All done.")
+    sys.exit(1 if error_count else 0)
 
 
 def get_pattern_file_set(dsid, checkssum_file_path, patterns):
